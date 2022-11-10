@@ -25,7 +25,7 @@ def english_to_french(english_text):
     """
     french_text = language_translator.translate(
         text=english_text,
-        model_id='en-fr').get_result()
+        model_id='en-fr').get_result().get('translations')[0]['translation']
     return french_text
 
 
@@ -35,8 +35,8 @@ def french_to_english(french_text):
     """
     english_text = language_translator.translate(
         text=french_text,
-        model_id='fr-en').get_result()
+        model_id='fr-en').get_result().get('translations')[0]['translation']
     return english_text
 
-#print(english_to_french('Hello world'))
-#print(french_to_english('bonjour'))
+##print(english_to_french('Hello'))
+##print(french_to_english('Bonjour'))

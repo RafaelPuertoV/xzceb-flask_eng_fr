@@ -9,14 +9,19 @@ class TestEnglishToFrench(unittest.TestCase):
         Test that it can translate from english to French.
         """
         
-        self.assertIsNotNone(translator.english_to_french('Hello'))
+        self.assertEqual(translator.english_to_french('Hello'),'Bonjour')
+
+        self.assertNotEqual(translator.english_to_french('Hello'),None)
+        
 
     def test_frenchToEnglish(self):
         """
         Test that it can translate from French to English.
         """
-        self.assertIsNotNone(translator.french_to_english('Bonjour'))
+        self.assertEqual(translator.french_to_english('Bonjour'),'Hello')
+        self.assertNotEqual(translator.french_to_english('Bonjour'),None)
 
 if __name__ == '__main__':
     unittest.main()
 
+p
